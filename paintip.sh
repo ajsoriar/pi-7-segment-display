@@ -3,8 +3,12 @@
 
 echo $1
 
+# move cursor to first position
 echo -en '\x76' > /dev/ttyAMA0 
 sleep 1
+
+# Clear display
+echo -en '\x78\x78\x78\x78\' > /dev/ttyAMA0
 
 #for i in 1 2 3 4
 for i in 1
