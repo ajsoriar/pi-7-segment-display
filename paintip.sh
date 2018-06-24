@@ -8,7 +8,7 @@ echo -en '\x76' > /dev/ttyAMA0
 sleep 1
 
 # Clear display null null null null
-echo -en '\x78\x78\x78\x78\' > /dev/ttyAMA0
+echo -en '\x78\x78\x78\x78' > /dev/ttyAMA0
 
 #for i in 1 2 3 4
 for i in 1
@@ -23,25 +23,39 @@ do
   C="$(cut -d'.' -f3 <<<"$ip")"
   D="$(cut -d'.' -f4 <<<"$ip")"
 
+  # Show values
   echo "$A"
   echo "$B"
   echo "$C"
   echo "$D"
-
+  echo "- end -"
+  
+  # Count all characters in a variable
+  echo ${#A}
+  echo ${#B}
+  echo ${#C}
+  echo ${#D}
+  echo "- end -"
+  
   echo "$A"
-  echo -en '\x76\x01\x02\x03\x04' > /dev/ttyAMA0
+  echo -en '\x76\x78\x78\x78\x78' > /dev/ttyAMA0 # move to first position and clear display
+  echo -en '\x76'&A" > /dev/ttyAMA0
+  #echo -en '\x76\x01\x02\x03\x04' > /dev/ttyAMA0
   sleep 2
 
   echo "$B"
-  echo -en '\x76\x02\x03\x04\x05' > /dev/ttyAMA0
+  echo -en '\x76\x78\x78\x78\x78' > /dev/ttyAMA0 # move to first position and clear display
+  #echo -en '\x76\x02\x03\x04\x05' > /dev/ttyAMA0
   sleep 2
 
   echo "$C"
-  echo -en '\x76\x03\x04\x05\x06' > /dev/ttyAMA0
+  echo -en '\x76\x78\x78\x78\x78' > /dev/ttyAMA0 # move to first position and clear display
+  #echo -en '\x76\x03\x04\x05\x06' > /dev/ttyAMA0
   sleep 2
 
   echo "$D"
-  echo -en '\x76\x04\x05\x06\x07' > /dev/ttyAMA0
+  echo -en '\x76\x78\x78\x78\x78' > /dev/ttyAMA0 # move to first position and clear display
+  #echo -en '\x76\x04\x05\x06\x07' > /dev/ttyAMA0
   sleep 2
 
 done
