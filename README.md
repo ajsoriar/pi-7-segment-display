@@ -22,3 +22,6 @@
 
 ## Turn on a couple of doths:
 > 'echo -en '\x77\x30' > /dev/ttyAMA0'
+
+## completely clear the display
+echo -en '\x78\x78\x78\x78\' > /dev/ttyAMA0
