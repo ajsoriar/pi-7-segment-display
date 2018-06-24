@@ -7,7 +7,7 @@ echo $1
 echo -en '\x76' > /dev/ttyAMA0 
 sleep 1
 
-# Clear display
+# Clear display null null null null
 echo -en '\x78\x78\x78\x78\' > /dev/ttyAMA0
 
 #for i in 1 2 3 4
@@ -22,6 +22,11 @@ do
   B="$(cut -d'.' -f2 <<<"$ip")"
   C="$(cut -d'.' -f3 <<<"$ip")"
   D="$(cut -d'.' -f4 <<<"$ip")"
+
+  echo "$A"
+  echo "$B"
+  echo "$C"
+  echo "$D"
 
   echo "$A"
   echo -en '\x76\x01\x02\x03\x04' > /dev/ttyAMA0
