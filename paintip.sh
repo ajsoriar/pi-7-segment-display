@@ -15,6 +15,13 @@ GetIPString () {
   
    # do stuff here ... 
    
+   # Get the char at a given position of a string in shell script
+   #$ var=abcdef
+   #$ echo ${var:0:1}
+   #a
+   #$ echo ${var:3:1}
+   #d
+   
    return '\x78\x78\x78\x78'
 }
 
