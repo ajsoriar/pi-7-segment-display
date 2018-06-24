@@ -3,6 +3,31 @@
 
 echo $1
 
+# Define your function here
+GetIPString () {
+
+   echo "GetIPString(), This id the IP: $1"
+   
+   ip_part_1="$(cut -d'.' -f1 <<<"$ip")"
+   ip_part_2="$(cut -d'.' -f2 <<<"$ip")"
+   ip_part_3="$(cut -d'.' -f3 <<<"$ip")"
+   ip_part_4="$(cut -d'.' -f4 <<<"$ip")"
+  
+   # do stuff here ... 
+   
+   return '\x78\x78\x78\x78'
+}
+
+# Invoke your function
+GetIPString $1
+
+# Capture value returnd by last command
+ret=$?
+echo $ret
+
+# --------------------
+
+
 # move cursor to first position
 echo -en '\x76' > /dev/ttyAMA0 
 sleep 1
