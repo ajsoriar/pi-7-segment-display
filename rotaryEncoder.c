@@ -2,6 +2,12 @@
 * sources: 
 * https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-8-rotary-encoder-super-kit-for-raspberrypi.html
 * http://wiringpi.com/
+*
+* Install GCC:
+* https://solarianprogrammer.com/2017/12/08/raspberry-pi-raspbian-install-gcc-compile-cpp-17-programs/
+*
+* Install WiringPi:
+* http://wiringpi.com/download-and-install/
 */
 
 /*
