@@ -1,49 +1,25 @@
-/* EXAMPLE 1 */
+/* go server, 23-jun-2018 */
 
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
-	"strings"
-
-	"bytes"
 	"os/exec"
+	"strings"
 )
-
-/*
-func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "Hi! This is http://localhost:8000/")
-	io.WriteString(w, "\n")
-	io.WriteString(w, "http://localhost:8000/www/index.html")
-	io.WriteString(w, "\n")
-	io.WriteString(w, "Visit <a href=\"http://localhost:8000/www/index.html\">go!</a>")
-}
-*/
 
 var mux map[string]func(http.ResponseWriter, *http.Request)
 
 func main() {
 
-	/*
-		server := http.Server{
-			Addr:    ":8000",
-			Handler: &myHandler{},
-		}
-		mux = make(map[string]func(http.ResponseWriter, *http.Request))
-		mux["/"] = hello
-		server.ListenAndServe()
-	*/
-
+	fmt.Print("A server has started in port 8000")
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./www"))))
-
 	http.HandleFunc("/eventsreceiver", _eventsreceiver)
-
 	http.ListenAndServe(":8000", nil)
-
-fmt.Print("A server has started in port 8000")
 }
 
 type myHandler struct{}

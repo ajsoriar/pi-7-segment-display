@@ -2,9 +2,6 @@
 
     console.log("actionsController plug-in!");
 
-
-
-
     var SERVICES_URL = "http://localhost:8000/eventsreceiver"
 
     var descriptors = {
@@ -17,7 +14,9 @@
                 {
                     id: "ON_BUTTON",
                     label: "ON/OF",
-                    os_command: "ls -l",
+                    // "irsend SEND_ONCE Samsung_BN59-00940A KEY_POWER",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_POWER",
                     x: 5,
                     y: 5,
                     w: 30,
@@ -26,7 +25,8 @@
                 {
                     id: "UP",
                     label: "UP",
-                    os_command: "go -version",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_UP",
                     x: 5,
                     y: 50,
                     w: 30,
@@ -35,7 +35,9 @@
                 {
                     id: "DOWN",
                     label: "DOWN",
-                    os_command: "say 'hello'",
+                    //os_command: "say 'hello'",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_DOWN",
                     x: 5,
                     y: 100,
                     w: 30,
@@ -47,6 +49,26 @@
                     os_command: "DIR",
                     x: 50,
                     y: 5,
+                    w: 30,
+                    h: 30
+                },
+                {
+                    id: "IP",
+                    label: "IP",
+                    os_command: "./scripts/show-ip.sh",
+                    command_params: null,
+                    x: 50,
+                    y: 50,
+                    w: 30,
+                    h: 30
+                },
+                {
+                    id: "X",
+                    label: "X",
+                    os_command: "x",
+                    command_params: "x",
+                    x: 50,
+                    y: 100,
                     w: 30,
                     h: 30
                 }
