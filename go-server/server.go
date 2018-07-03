@@ -42,6 +42,8 @@ func main() {
 	http.HandleFunc("/eventsreceiver", _eventsreceiver)
 
 	http.ListenAndServe(":8000", nil)
+
+fmt.Print("A server has started in port 8000")
 }
 
 type myHandler struct{}
