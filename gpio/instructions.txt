@@ -1,0 +1,9 @@
+In the case of:
+
+open /dev/gpiomem: permission denied
+
+
+do:
+
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
