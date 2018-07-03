@@ -1,0 +1,28 @@
+{
+    "name": "Remove Apps Samsung 2017",
+    "description": "This sequence removes Apps from Samsung 2017",
+    "descriptor": "samsung-remote",
+    "loop": true,
+    "sequence": [
+        {
+            "step_num": 0,
+            "time": 0,
+            "action": "DOWN"
+        },
+        {
+            "step_num": 0,
+            "time": 2000,
+            "action": "ENTER"
+        },
+        {
+            "step_num": 0,
+            "time": 4000,
+            "action": "LEFT"
+        },
+        {
+            "step_num": 0,
+            "time": 6000,
+            "action": "ENTER"
+        }
+    ]
+}
