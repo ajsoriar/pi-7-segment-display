@@ -2,6 +2,8 @@
 
 # 2018-06-18
 
+echo "Hello world!"
+
 # move cursor to first position
 echo -en '\x76' > /dev/ttyAMA0 
 sleep 1
