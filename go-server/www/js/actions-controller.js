@@ -211,17 +211,14 @@
         }
 
         var getOsCommand = function( remoteModel, remoteEvent ) {
-
             console.log( "[actions-controller] getOsCommand()" );
             console.log( "[actions-controller] getOsCommand() remoteModel:", remoteModel );
             console.log( "[actions-controller] getOsCommand() remoteEvent:", remoteEvent );
             console.log( "[actions-controller] getOsCommand() descriptors[remoteModel]:", descriptors[remoteModel] );
-
             var obj = null;
             var ac = null;
             var os = null;
             var cmd = null; 
-
             var lon = descriptors[remoteModel].actions.length;
             for ( var i = 0; i < lon; i++) {
                 obj = descriptors[remoteModel];
@@ -229,8 +226,26 @@
                 os = ac.os_command;
                 if ( ac.id == remoteEvent ) cmd = os;
             }
-            
             return cmd
+        }
+
+        var getOsCommandParams = function( remoteModel, remoteEvent ) {
+            console.log( "[actions-controller] getOsCommandParams()" );
+            console.log( "[actions-controller] getOsCommandParams() remoteModel:", remoteModel );
+            console.log( "[actions-controller] getOsCommandParams() remoteEvent:", remoteEvent );
+            console.log( "[actions-controller] getOsCommandParams() descriptors[remoteModel]:", descriptors[remoteModel] );
+            var obj = null;
+            var ac = null;
+            var os = null;
+            var params = null; 
+            var lon = descriptors[remoteModel].actions.length;
+            for ( var i = 0; i < lon; i++) {
+                obj = descriptors[remoteModel];
+                ac = obj.actions[i];
+                os = ac.command_params;
+                if ( ac.id == remoteEvent ) params = os;
+            }
+            return params
         }
 
         return {
@@ -262,8 +277,8 @@
 
                var data =   "remote="+ remoteId +
                             "&"+"remoteEvent=" + remoteEvent +
+                            "&"+"command_params=" + getOsCommandParams( remoteId, remoteEvent ) +
                             "&"+"osCommand=" + getOsCommand( remoteId, remoteEvent );
-
 
                 sendEventToBack( data );
             }
