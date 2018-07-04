@@ -94,8 +94,10 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	//owner := r.Form.Get("remote")
 	//name := r.Form.Get("remoteEvent")
 	osCommand := r.Form.Get("osCommand")
+	commandParams := r.Form.Get("command_params")
 
-	fmt.Println("osCommand: %s", osCommand)
+	fmt.Println("-> osCommand: %s", osCommand)
+	fmt.Println("-> commandParams: %s", commandParams)
 
 	// --------------------------------------
 
@@ -103,12 +105,10 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	//cmd := exec.Command("go", "version")
 	//cmd := exec.Command("ls", "-l")
 
-	cmd := exec.Command(osCommand)
+	cmd := exec.Command(osCommand, commandParams )
 
 	// Stdout buffer
 	cmdOutput := &bytes.Buffer{}
-
-
 
 	output, err2 := cmd.CombinedOutput()
 	if err2 != nil {
