@@ -1,2 +1,4 @@
 #!/bin/bash
-go run ./go-server/server.go
+
+cd go-server
+go run server.go
