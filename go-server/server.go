@@ -105,7 +105,10 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	//cmd := exec.Command("go", "version")
 	//cmd := exec.Command("ls", "-l")
 
-	cmd := exec.Command(osCommand, commandParams )
+	//cmd := exec.Command(osCommand, commandParams )
+	//os_command: "irsend",
+	//command_params: "SEND_ONCE Samsung_BN59-00940A KEY_POWER",
+	cmd := exec.Command("irsend", "SEND_ONCE", "Samsung_BN59-00940A", "KEY_POWER" )
 
 	// Stdout buffer
 	cmdOutput := &bytes.Buffer{}
