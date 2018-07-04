@@ -108,13 +108,49 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	// Stdout buffer
 	cmdOutput := &bytes.Buffer{}
 
+
+
+	output, err2 := cmd.CombinedOutput()
+	if err2 != nil {
+		fmt.Println(fmt.Sprint(err2) + ": " + string(output))
+		return
+	} else {
+		fmt.Println(string(output))
+	}
+
+
+
+
 	// Attach buffer to command
 	cmd.Stdout = cmdOutput
 
 	printCommand(cmd)
+
+
 	err := cmd.Run() // will wait for command to return
+
+
+
+
 	printError(err)
 	// Only output the commands stdout
 	printOutput(cmdOutput.Bytes()) // => go version go1.7.5 darwin/amd64
+
+
+
+
+	// ----------
+
+	/*
+	cmd := exec.Command("find", "/", "-maxdepth", "1", "-exec", "wc", "-c", "{}", "\\")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println(fmt.Sprint(err) + ": " + string(output))
+		return
+	} else {
+		fmt.Println(string(output))
+	}
+*/
+	
 
 }

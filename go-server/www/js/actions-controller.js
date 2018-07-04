@@ -44,6 +44,19 @@
                     h: 30
                 },
                 {
+                    id: "OO",
+                    label: "OO",
+                    //os_command: "say 'hello'",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_DOWN",
+                    x: 5,
+                    y: 150,
+                    w: 30,
+                    h: 30
+                },
+
+
+                {
                     id: "DIR",
                     label: "DIR",
                     os_command: "DIR",
