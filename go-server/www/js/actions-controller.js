@@ -2,7 +2,7 @@
 
     console.log("actionsController plug-in!");
 
-    var SERVICES_URL = "http://localhost:8000/eventsreceiver"
+    var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
 
     var descriptors = {
         "SAMSUNG-GENERIC-REMOTE": {
