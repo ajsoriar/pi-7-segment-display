@@ -193,6 +193,8 @@
             };
 
             request.send(data);
+
+            ajsrConsole.setLap("Data was sent!");
         }
 
         var getOsCommand = function( remoteModel, remoteEvent ) {
