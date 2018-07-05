@@ -96,4 +96,6 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 		printOutput(cmdOutput.Bytes()) // => go version go1.7.5 darwin/amd64
 
 	*/
+
+	err := cmd.Run() // will wait for command to return
 }
