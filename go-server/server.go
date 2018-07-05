@@ -108,8 +108,22 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	//cmd := exec.Command(osCommand, commandParams )
 	//os_command: "irsend",
 	//command_params: "SEND_ONCE Samsung_BN59-00940A KEY_POWER",
+
+	// this works
 	//cmd := exec.Command("irsend", "SEND_ONCE", "Samsung_BN59-00940A", "KEY_POWER" )
-	cmd := exec.Command("irsend", "SEND_ONCE Samsung_BN59-00940A KEY_POWER")
+
+	// this doesn't
+	//cmd := exec.Command("irsend", "SEND_ONCE Samsung_BN59-00940A KEY_POWER")
+
+	/*
+			args := []string{"what", "ever", "you", "like"}
+		    cmd := exec.Command(app, args...)
+	*/
+
+	testString := "SEND_ONCE Samsung_BN59-00940A KEY_POWER"
+	args := strings.Fields(testString)
+	//args := []string{"SEND_ONCE", "Samsung_BN59-00940A", "KEY_POWER"}
+	cmd := exec.Command("irsend", args...)
 
 	// Stdout buffer
 	cmdOutput := &bytes.Buffer{}
