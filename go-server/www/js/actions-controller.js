@@ -12,17 +12,18 @@
             h: 300,
             actions: [
                 {
+
+
+                    
                     id: "ON_BUTTON",
                     label: "ON/OF",
-                    // "irsend SEND_ONCE Samsung_BN59-00940A KEY_POWER",
                     os_command: "irsend",
                     command_params: "SEND_ONCE Samsung_BN59-00940A KEY_POWER",
                     x: 5,
                     y: 5,
                     w: 30,
                     h: 30
-                },
-                {
+                },{
                     id: "UP",
                     label: "UP",
                     os_command: "irsend",
@@ -31,57 +32,73 @@
                     y: 50,
                     w: 30,
                     h: 30
-                },
-                {
+                },{
                     id: "DOWN",
                     label: "DOWN",
-                    //os_command: "say 'hello'",
                     os_command: "irsend",
                     command_params: "SEND_ONCE Samsung_BN59-00940A KEY_DOWN",
                     x: 5,
                     y: 100,
                     w: 30,
                     h: 30
-                },
-                {
-                    id: "OO",
-                    label: "OO",
-                    //os_command: "say 'hello'",
+                },{
+                    id: "RIGHT",
+                    label: "RIGHT",
                     os_command: "irsend",
-                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_DOWN",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_RIGHT",
                     x: 5,
                     y: 150,
                     w: 30,
                     h: 30
-                },
+                },{
 
 
-                {
-                    id: "DIR",
-                    label: "DIR",
-                    os_command: "DIR",
+
+                    id: "LEFT",
+                    label: "LEFT",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_LEFT",
                     x: 50,
                     y: 5,
                     w: 30,
                     h: 30
-                },
-                {
-                    id: "IP",
-                    label: "IP",
-                    os_command: "./scripts/show-ip.sh",
-                    command_params: null,
+                },{
+                    id: "VOL_DOWN",
+                    label: "VOL_DOWN",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_VOLUMEUP",
                     x: 50,
                     y: 50,
                     w: 30,
                     h: 30
-                },
-                {
-                    id: "X",
-                    label: "X",
-                    os_command: "x",
-                    command_params: "x",
+                },{
+                    id: "VOL_UP",
+                    label: "VOL_UP",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_VOLUMEDOWN",
                     x: 50,
                     y: 100,
+                    w: 30,
+                    h: 30
+                },{
+                    id: "ENTER",
+                    label: "ENTER",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_ENTER",
+                    x: 50,
+                    y: 150,
+                    w: 30,
+                    h: 30
+                },{
+
+
+
+                    id: "EXIT",
+                    label: "EXIT",
+                    os_command: "irsend",
+                    command_params: "SEND_ONCE Samsung_BN59-00940A KEY_EXIT",
+                    x: 100,
+                    y: 5,
                     w: 30,
                     h: 30
                 }
