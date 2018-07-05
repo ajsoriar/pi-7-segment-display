@@ -70,9 +70,10 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 
 	// --------------------------------------
 
-	paramsString := command_params //"SEND_ONCE Samsung_BN59-00940A KEY_POWER"
+	paramsString := commandParams //"SEND_ONCE Samsung_BN59-00940A KEY_POWER"
 	args := strings.Fields(paramsString)
-	cmd := exec.Command("irsend", args...)
+	//cmd := exec.Command("irsend", args...)
+	cmd := exec.Command(osCommand, args...)
 
 	/*
 
