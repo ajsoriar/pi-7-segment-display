@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -37,6 +38,7 @@ func (*myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func printCommand(cmd *exec.Cmd) {
 	fmt.Printf("==> Executing: %s\n", strings.Join(cmd.Args, " "))
 }
+*/
 
 func printError(err error) {
 	if err != nil {
@@ -44,6 +46,7 @@ func printError(err error) {
 	}
 }
 
+/*
 func printOutput(outs []byte) {
 	if len(outs) > 0 {
 		fmt.Printf("==> Output: %s\n", string(outs))
