@@ -108,8 +108,7 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	//cmd := exec.Command(osCommand, commandParams )
 	//os_command: "irsend",
 	//command_params: "SEND_ONCE Samsung_BN59-00940A KEY_POWER",
-	//cmd := exec.Command("irsend", "SEND_ONCE", "Samsung_BN59-00940A", "KEY_POWER" )
-	cmd := exec.Command("irsend", "SEND_ONCE Samsung_BN59-00940A KEY_POWER")
+	cmd := exec.Command("irsend", "SEND_ONCE", "Samsung_BN59-00940A", "KEY_POWER" )
 
 	// Stdout buffer
 	cmdOutput := &bytes.Buffer{}
@@ -122,28 +121,39 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(string(output))
 	}
 
+
+
+
 	// Attach buffer to command
 	cmd.Stdout = cmdOutput
 
 	printCommand(cmd)
 
+
 	err := cmd.Run() // will wait for command to return
+
+
+
 
 	printError(err)
 	// Only output the commands stdout
 	printOutput(cmdOutput.Bytes()) // => go version go1.7.5 darwin/amd64
 
+
+
+
 	// ----------
 
 	/*
-		cmd := exec.Command("find", "/", "-maxdepth", "1", "-exec", "wc", "-c", "{}", "\\")
-		output, err := cmd.CombinedOutput()
-		if err != nil {
-			fmt.Println(fmt.Sprint(err) + ": " + string(output))
-			return
-		} else {
-			fmt.Println(string(output))
-		}
-	*/
+	cmd := exec.Command("find", "/", "-maxdepth", "1", "-exec", "wc", "-c", "{}", "\\")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println(fmt.Sprint(err) + ": " + string(output))
+		return
+	} else {
+		fmt.Println(string(output))
+	}
+*/
+	
 
 }
