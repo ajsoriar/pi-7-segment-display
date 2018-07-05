@@ -98,4 +98,5 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	*/
 
 	err := cmd.Run() // will wait for command to return
+	printError(err)
 }
