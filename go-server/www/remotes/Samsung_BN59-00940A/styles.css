@@ -1,0 +1,132 @@
+/* Samsung_BN59-00940A */
+
+.Samsung_BN59-00940A.frame-bg{
+   background-color: darkgreen; 
+}
+
+.Samsung_BN59-00940A .remote-body{
+    background-color: #191919;
+    width: 150px;
+    height: 460px;
+    margin-top: 5px;
+    margin-left: 5px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.Samsung_BN59-00940A .remote-button{
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+}
+
+.Samsung_BN59-00940A .remote-button.ON_BUTTON{
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: 1px solid #ff7878;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+}
+
+.Samsung_BN59-00940A .remote-button.VOL_UP{
+    top: 200px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #0056dc;
+    border: 1px solid #1c3494;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.Samsung_BN59-00940A .remote-button.VOL_DOWN{
+    top: 250px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #0056dc;
+    border: 1px solid #1c3494;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+
+
+.Samsung_BN59-00940A .remote-button.UP{
+    top: 300px;
+    left: 61px;
+    width: 30px;
+    height: 30px;
+    background-color: #060606;
+    border: 1px solid #404040;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+.Samsung_BN59-00940A .remote-button.DOWN{
+    top: 360px;
+    left: 61px;
+    width: 30px;
+    height: 30px;
+    background-color: #060606;
+    border: 1px solid #404040;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.Samsung_BN59-00940A .remote-button.RIGHT{
+    top: 340px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #060606;
+    border: 1px solid #404040;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+.Samsung_BN59-00940A .remote-button.LEFT{
+    top: 340px;
+    left: 100px;
+    width: 30px;
+    height: 30px;
+    background-color: #060606;
+    border: 1px solid #404040;
+    color: white;
+    background-image: none;
+    overflow: hidden;
+    font-size: 8px;
+    padding: 0;
+    text-align: center;
+    border-radius: 3px;
+}

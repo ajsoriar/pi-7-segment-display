@@ -5,16 +5,13 @@
     var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
 
     var descriptors = {
-        "SAMSUNG-GENERIC-REMOTE": {
-            id: "SAMSUNG-GENERIC-REMOTE",
+        "Samsung_BN59-00940A": {
+            id: "Samsung_BN59-00940A",
             bgImage: null,
             w: 100,
             h: 300,
             actions: [
                 {
-
-
-                    
                     id: "ON_BUTTON",
                     label: "ON/OF",
                     os_command: "irsend",
@@ -136,15 +133,10 @@
         }
     };
 
-
-
-
-    // window.actionsController( "actions-controller-container", "SAMSUNG-GENERIC-REMOTE" );
+    // window.actionsController( "actions-controller-container", "Samsung_BN59-00940A" );
     var actionsController = function () { // function (targetID, descriptorID ) {
 
         'use strict';
-
-
         var init = function( targetID, descriptorID ) {
 
             var currentController = descriptors[descriptorID];
@@ -158,20 +150,20 @@
     
             var htmlString = el.innerHTML;
     
-            htmlString += '<div class="remote-control" style="top:'+ 10 +'px">'; //+ currentController.actions.label +'</div>';
+            htmlString += '<div class="remote-control '+ descriptorID +' frame-bg" style="top:'+ 10 +'px"><div class="remote-body">'; //+ currentController.actions.label +'</div>';
             for (var i = 0; i < currentController.actions.length; i++ ) { 
                 htmlString += '<button ' +
-                 'class="remote-button" '+ 
+                 'class="remote-button '+ currentController.actions[i].id +'" '+ 
                  'type="button" '+ 
                  'onclick="window.actionsController.launchControllerEvent(\''+ currentController.id +'\',\''+ currentController.actions[i].id +'\')" '+
-                 'style="'+
-                 'top:'+ currentController.actions[i].x +'px;'+
-                 'left:'+ currentController.actions[i].y +'px;'+
-                 'width:'+ currentController.actions[i].w +'px;'+
-                 'height:'+ currentController.actions[i].h +'px" '+
+                // 'style="'+
+                // 'top:'+ currentController.actions[i].x +'px;'+
+                // 'left:'+ currentController.actions[i].y +'px;'+
+                // 'width:'+ currentController.actions[i].w +'px;'+
+                // 'height:'+ currentController.actions[i].h +'px" '+
                  '>'+ currentController.actions[i].label +'</button>';
             }
-            htmlString += '</div>';
+            htmlString += '</div></div>';
             console.log("htmlString:", htmlString );
             el.innerHTML = htmlString;
         }
