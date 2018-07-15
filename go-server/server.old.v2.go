@@ -4,7 +4,6 @@ package main
 
 import (
 	"fmt"
-	"html/template"
 	"io"
 	"net/http"
 	"os"
@@ -17,15 +16,9 @@ var mux map[string]func(http.ResponseWriter, *http.Request)
 func main() {
 
 	fmt.Print("A server has started in port 8000")
-
-	//http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./www"))))
-	http.HandleFunc("/index.html", handler3)
+	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./www"))))
 	http.HandleFunc("/eventsreceiver", _eventsreceiver)
 	http.ListenAndServe(":8000", nil)
-	//http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./www"))))
-
-	fs := http.FileServer(http.Dir("./www/js"))
-	http.Handle("/js/", http.StripPrefix("/js/", fs))
 }
 
 type myHandler struct{}
@@ -37,13 +30,6 @@ func (*myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	io.WriteString(w, "My server: "+r.URL.String())
-}
-
-// ---------------------------------------------------
-
-func handler3(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("./www/templates/index.tmpl.html")
-	t.ExecuteTemplate(w, "index.tmpl.html", "192.168.3.19")
 }
 
 // ---------------------------------------------------
@@ -91,7 +77,25 @@ func _eventsreceiver(w http.ResponseWriter, r *http.Request) {
 	cmd := exec.Command(osCommand, args...)
 
 	/*
+
+		// Stdout buffer
+		cmdOutput := &bytes.Buffer{}
+
+		output, err2 := cmd.CombinedOutput()
+		if err2 != nil {
+			fmt.Println(fmt.Sprint(err2) + ": " + string(output))
+			return
+		} else {
+			fmt.Println(string(output))
+		}
+
+		// Attach buffer to command
+		cmd.Stdout = cmdOutput
+		printCommand(cmd)
+		err := cmd.Run() // will wait for command to return
+		printError(err)
 		printOutput(cmdOutput.Bytes()) // => go version go1.7.5 darwin/amd64
+
 	*/
 
 	printCommand(cmd)

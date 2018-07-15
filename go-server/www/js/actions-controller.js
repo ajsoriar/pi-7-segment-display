@@ -2,7 +2,8 @@
 
     console.log("actionsController plug-in!");
 
-    var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
+    //var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
+    //if ( !SERVICES_URL ) var SERVICES_URL = "http://localhost:8000/eventsreceiver";
 
     var descriptors = {
         "Samsung_BN59-00940A": {

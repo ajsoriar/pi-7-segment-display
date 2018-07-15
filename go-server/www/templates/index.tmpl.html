@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/timeline.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/remotes/Samsung_BN59-00940A/styles.css">
+
+
+</head>
+
+<body>
+  hello world!
+
+  <div id="chooser-container" class="side-left"></div>
+  <div class="middle">
+    <div class="timeline">
+      <div class="clock"></div>
+      <div class="controls"></div>
+      <div class="menu"></div>
+    </div>
+  </div>
+  <div id="actions-controller-container" class="side-right">
+
+  </div>
+
+  <script>
+    var SERVICES_URL = {{ . }};
+  </script>
+  
+  <script src="/js/scripts.js"></script>
+  <script src="/js/libs/animation-stepper.js"></script>
+  <script src="/js/timeline.js"></script>
+  <script src="/js/side-chooser.js"></script>
+  <script src="/js/actions-controller.js"></script>
+  <script src="/js/ajsr-console.js"></script>
+  <script>
+    ajsrConsole.startTime();
+  </script>
+  
+  <script>
+    window.actionsController.new( "actions-controller-container", "Samsung_BN59-00940A", "Samsung 1" );
+    window.actionsController.new( "actions-controller-container", "TALK", "Say stuff" );
+  </script>
+</body>
+</html>
