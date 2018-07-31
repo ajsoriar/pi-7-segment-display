@@ -86,6 +86,19 @@ var timeCanvas = {
     onGoingUpdate: false,
     el: null,
     // id: null,
+    data: {
+        tracks: [
+            {
+                title: "Default track",
+                items: [
+                    {
+                        title: "Start event",
+                        time: 0
+                    }
+                ]
+            }
+        ]
+    },
     init: function(){
         console.log("[timeCanvas] init()");
 
@@ -95,6 +108,10 @@ var timeCanvas = {
             var str = '';
             str += '<div id="'+ this.el +'" class="timeCanvas"></div>';
         }
+
+        this.el = document.getElementById("time-events-container");
+
+        this.drawCanvas();
 
         //if ( this.onGoingUpdate === false) this.update();
     },
@@ -111,5 +128,17 @@ var timeCanvas = {
     },
     refresh: function( time ){
         console.log("[timeCanvas] refresh()");
+    },
+    addItem: function( timestamp, track ){
+
+    },
+    addTrack: function( label ) {
+
+    },
+    drawCanvas: function(){
+        var str = ".....";
+
+        console.log("this.el:", this.el );
+        //this.el.innerHtml(str); 
     }
 }
