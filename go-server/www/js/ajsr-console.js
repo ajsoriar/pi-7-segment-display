@@ -74,6 +74,10 @@
         var t = d.toLocaleTimeString();
         return t + " "
       },
+      error: function (value ){
+        if (value === null) value = "Some kind of error!";
+        this.log( this.getTimeString() +"ERROR: "+ value);
+      },
       log: function (value) {
         var t = this.getTimeString();
         var el = document.getElementById("ajsrConsole-screen");

@@ -1,8 +1,9 @@
+/* stuff done! */
+
 (function () {
 
     console.log("actionsController plug-in!");
 
-    var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
 
     var descriptors = {
         "Samsung_BN59-00940A": {
@@ -209,7 +210,7 @@
             
             console.log( "callBackEnd()" );
 
-            if (url === null ) url = SERVICES_URL;
+            if (url === null ) url = window.SERVICES_URL;  //SERVICES_URL;
             var request  = new XMLHttpRequest();
             request.open(method, url );
             request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -230,6 +231,7 @@
             request.onerror = function() {
 
                 console.log("request.onerror ..." );
+                ajsrConsole.setLap("Data was sent!");
             };
             request.onreadystatechange = function() {
                 if(this.readyState == XMLHttpRequest.DONE && this.status == 200) {

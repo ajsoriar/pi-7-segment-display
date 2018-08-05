@@ -17,7 +17,39 @@
 
   <link rel="stylesheet" href="remotes/Samsung_BN59-00940A/styles.css">
   <script>
-    var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
+
+    var updateIp = function () {
+
+      var el = document.getElementById('input-services-ip');
+      var val = el.value;
+      console.log('Change IP to: ', val);
+
+      window.refreshServerData({
+        SERVER_IP: val
+      })
+
+      ajsrnotify({
+        msg: '<b>IP!</b> Services IP has changed!',
+        type: "success", // null, "error", "info", "alert", "success"
+        position: "center", // null, "right", "left"
+        timeout: 2000,
+        theme: null // null, "windows-98"
+      })
+
+
+    }
+
+    //var SERVICES_URL = "http://192.168.3.104:8000/eventsreceiver"
+    var SERVER_IP = "192.168.3.104",
+      SERVER_PORT = "8000",
+      SERVICES_URL = "http://" + SERVER_IP + ":" + SERVER_PORT + "/eventsreceiver";
+
+    window.refreshServerData = function (newData) {
+      if (newData.SERVER_IP != null) window.SERVER_IP = newData.SERVER_IP;
+      if (newData.SERVER_PORT != null) window.SERVER_PORT = newData.SERVER_PORT;
+      SERVICES_URL = "http://" + SERVER_IP + ":" + SERVER_PORT + "/eventsreceiver";
+    };
+
   </script>
 </head>
 
@@ -49,15 +81,13 @@
         </li>
         <li>
           <div>Services IP:
-            <div >
-                  <input id="input-services-ip" type="text" name="" value="">
-                  <button type="button" class="" data-url="" onclick="(function(){ 
-                    var el = document.getElementById('input-services-ip');
-                    var val = el.value;
-                    console.log('Change IP to: ', val);
-                    window.SERVICES_URL = 'http://'+ val +':8000/eventsreceiver';
+            <div>
+              <input id="input-services-ip" type="text" name="" value="">
+              <button type="button" class="" data-url="" onclick="(function(){ 
+                    window.updateIp();
+
                   }())">Update IP
-                  </button>
+              </button>
             </div>
             <div class="btn-ip-change-apply"></div>
           </div>
@@ -81,6 +111,7 @@
   <script src="js/side-chooser.js"></script>
   <script src="js/actions-controller.js"></script>
   <script src="js/ajsr-console.js"></script>
+  <script src="node_modules/ajsr-notify/dist/ajsr-notify.min.js"></script>
   <script>
     ajsrConsole.startTime();
   </script>
