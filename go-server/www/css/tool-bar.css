@@ -1,0 +1,40 @@
+.tool-bar{
+    width: 100%;
+    height: 70px;
+    background-color: #aeb0b1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tool-bar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tool-bar .btn-info{
+
+}
+.tool-bar .new-space{
+
+}
+.tool-bar .btn-play{
+
+}
+.tool-bar .btn-pause{
+
+}
+.tool-bar .display-current-time{
+
+}
+.tool-bar .new-space{
+
+}
+.tool-bar .impt-services-ip{
+
+}
+.tool-bar .btn-ip-change-apply{
+
+}

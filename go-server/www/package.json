@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ajsr-notify": "^0.0.1",
+    "animation-stepper": "^0.0.1"
+  }
+}
